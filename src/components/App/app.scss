@@ -1,6 +1,9 @@
-#app {
-  margin: 2em 0;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2em;
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &-wrapper {
+    flex-grow: 2;
+  }
 }

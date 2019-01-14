@@ -1,0 +1,22 @@
+@import 'src/styles/vars';
+
+.nav {
+  padding: $base-padding;
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+
+    &__icon {
+      margin: auto;
+      font-size: $base-font-size*1.5;
+      color: $color-green;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import 'src/styles/vars';
+
+.footer {
+  padding: $base-padding*2;
+  background-color: $color-pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__link {
+    padding: $base-padding/2;
+    font-size: $base-font-size*0.9;
+    text-decoration: underline; 
+  }
+}
