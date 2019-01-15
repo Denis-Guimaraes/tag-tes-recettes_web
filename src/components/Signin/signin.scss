@@ -1,0 +1,24 @@
+@import 'src/styles/vars';
+
+.signin {
+  margin-top: $base-margin;
+
+  &__title {
+    font-family: $fantasy-font;
+    font-size: $base-font-size*1.6;
+    color: $color-dark;
+    margin-bottom: $base-margin;
+  }
+
+  &__button {
+    display: block;
+    background-color: $color-blue-dark;
+    color: $color-light;
+    padding: $base-padding;
+    margin: $base-margin*2 auto;
+    border: none;
+    border-radius: 5px;
+    font-size: $base-font-size;
+    font-weight: bold;
+  }
+}

@@ -1,8 +1,9 @@
 @import 'src/styles/vars';
 
 .footer {
-  padding: $base-padding*2;
-  background-color: $color-pink;
+  padding: $base-padding;
+  background-color: $color-dark;
+  color: $color-light;
   display: flex;
   justify-content: space-between;
   align-items: center;

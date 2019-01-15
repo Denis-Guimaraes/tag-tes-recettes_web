@@ -1,21 +1,32 @@
 // NPM import
 import React from 'react';
-import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Local import
+import LinkSignin from './LinkSignin';
+import LinkSignup from './LinkSignup';
+import LinkHome from './LinkHome';
 
 // Styles
 import './nav.scss';
 
 // Code
-const Nav = () => (
+const Nav = ({ location }) => (
   <nav className="nav">
     <ul className="nav-list">
-      <li className="nav-item"><FaSignInAlt className="nav-item__icon" />Connexion</li>
-      <li className="nav-item"><FaUserPlus className="nav-item__icon" />Inscription</li>
+      {location.pathname !== '/connexion' && <LinkSignin />}
+      {location.pathname !== '/' && <LinkHome />}
+      {location.pathname !== '/inscription' && <LinkSignup />}
     </ul>
   </nav>
 );
 
+Nav.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 // Export
-export default Nav;
+export default withRouter(Nav);

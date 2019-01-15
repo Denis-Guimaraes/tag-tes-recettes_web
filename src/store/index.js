@@ -2,7 +2,7 @@
 import { createStore } from 'redux';
 
 // local import
-import reducer from './reducer';
+import InputReducer from './reducers/InputReducer';
 
 // code
 const devTools = [];
@@ -10,7 +10,7 @@ if (window.devToolsExtension) {
   devTools.push(window.devToolsExtension());
 }
 
-const store = createStore(reducer, ...devTools);
+const store = createStore(InputReducer, ...devTools);
 
 // Export
 export default store;

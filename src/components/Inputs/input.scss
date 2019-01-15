@@ -1,0 +1,33 @@
+@import 'src/styles/vars';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-blue-dark;
+  color: $color-light;
+  font-size: $base-font-size;
+  margin: $base-margin auto;
+  padding: $base-padding;
+  padding-top: 0;
+  border-radius: 5px;
+
+  &__label {
+    padding: $base-padding;
+  }
+
+  &__text {
+    background-color: $color-light;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: $base-font-size;
+    padding: $base-padding;
+
+    &--good {
+      border-bottom: 3px solid $color-dark;
+    }
+
+    &--bad{
+      border-bottom: 3px solid $color-red;
+    }
+  }
+}

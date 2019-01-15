@@ -2,11 +2,11 @@
 
 .header {
   padding: $base-padding*2;
-  background-color: $color-pink;
-  text-transform: uppercase;
+  background-color: $color-dark;
+  color: $color-light;
 
   &__title {
     font-family: $fantasy-font;
-    font-size: $base-font-size*2;
+    font-size: $base-font-size*1.8;
   }
 }
