@@ -11,6 +11,7 @@ import './input.scss';
 class ConfirmPassword extends React.Component {
   static propTypes = {
     confirmPassword: PropTypes.string.isRequired,
+    inputId: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
   }
 
@@ -33,14 +34,14 @@ class ConfirmPassword extends React.Component {
   }
 
   render() {
-    const { confirmPassword } = this.props;
+    const { confirmPassword, inputId } = this.props;
     return (
       <div className="input">
-        <label htmlFor="confirmPassword" className="input__label">Confirmer mot de passe</label>
+        <label htmlFor={inputId} className="input__label">Confirmer mot de passe</label>
         <input
           className={this.checkPassword(confirmPassword)}
           type="password"
-          id="confirmPassword"
+          id={inputId}
           name="confirmPassword"
           value={confirmPassword}
           onChange={this.handleChange}

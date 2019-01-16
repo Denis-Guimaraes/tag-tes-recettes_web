@@ -11,6 +11,7 @@ import './input.scss';
 class Email extends React.Component {
   static propTypes = {
     email: PropTypes.string.isRequired,
+    inputId: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
   }
 
@@ -34,14 +35,14 @@ class Email extends React.Component {
   }
 
   render() {
-    const { email } = this.props;
+    const { email, inputId } = this.props;
     return (
       <div className="input">
-        <label htmlFor="email" className="input__label">E-mail</label>
+        <label htmlFor={inputId} className="input__label">E-mail</label>
         <input
           className={this.checkEmail(email)}
           type="email"
-          id="email"
+          id={inputId}
           name="email"
           value={email}
           onChange={this.handleChange}

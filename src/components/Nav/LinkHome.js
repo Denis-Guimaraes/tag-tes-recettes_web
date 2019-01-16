@@ -11,7 +11,7 @@ import './nav.scss';
 // Code
 const LinkHome = () => (
   <li>
-    <Link to="/" className="nav-item">
+    <Link to="/" className="nav-item nav-item--mobile">
       <FaHome className="nav-item__icon" />Accueil
     </Link>
   </li>

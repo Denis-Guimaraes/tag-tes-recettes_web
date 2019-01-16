@@ -19,3 +19,11 @@
     }
   }
 }
+
+@media ALL and (min-width: 768px) {
+  .nav {
+    &-item--mobile {
+      display: none;
+    }
+  }
+}

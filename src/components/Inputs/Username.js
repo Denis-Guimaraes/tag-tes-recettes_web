@@ -11,6 +11,7 @@ import './input.scss';
 class Username extends React.Component {
   static propTypes = {
     username: PropTypes.string.isRequired,
+    inputId: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
   }
 
@@ -33,14 +34,14 @@ class Username extends React.Component {
   }
 
   render() {
-    const { username } = this.props;
+    const { username, inputId } = this.props;
     return (
       <div className="input">
-        <label htmlFor="username" className="input__label">Nom d'utilisateur</label>
+        <label htmlFor={inputId} className="input__label">Nom d'utilisateur</label>
         <input
           className={this.checkUsername(username)}
           type="text"
-          id="username"
+          id={inputId}
           name="username"
           value={username}
           onChange={this.handleChange}

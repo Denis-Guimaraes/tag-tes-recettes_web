@@ -1,6 +1,12 @@
 @import 'src/styles/vars';
 
 .home {
+
+  &__wrapper {
+    display: flex;
+  }
+}
+.resume {
   margin-top: $base-margin;
 
   &__title {
@@ -12,5 +18,12 @@
 
   &__text {
     padding-bottom: $base-padding;
+  }
+}
+
+@media ALL and (min-width: 768px) {
+  .resume {
+    flex-grow: 2;
+    margin-right: $base-margin*2;
   }
 }

@@ -11,7 +11,7 @@ import './nav.scss';
 // Code
 const LinkSignup = () => (
   <li>
-    <Link to="/inscription" className="nav-item">
+    <Link to="/inscription" className="nav-item nav-item--mobile">
       <FaUserPlus className="nav-item__icon" />Inscription
     </Link>
   </li>
