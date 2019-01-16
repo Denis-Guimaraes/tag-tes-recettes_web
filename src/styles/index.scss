@@ -1,5 +1,21 @@
 @import 'reset';
+@import 'vars';
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald-Regular.ttf');
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald-Bold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'CevicheOne';
+  src: url('fonts/CevicheOne-Regular.ttf');
+}
 
 body {
-  background-color: #eaeaea;
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: $base-font-size;
 }

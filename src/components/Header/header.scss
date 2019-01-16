@@ -1,0 +1,12 @@
+@import 'src/styles/vars';
+
+.header {
+  padding: $base-padding*2;
+  background-color: $color-dark;
+  color: $color-light;
+
+  &__title {
+    font-family: $fantasy-font;
+    font-size: $base-font-size*1.8;
+  }
+}

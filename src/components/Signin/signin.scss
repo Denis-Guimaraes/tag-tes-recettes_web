@@ -1,0 +1,48 @@
+@import 'src/styles/vars';
+
+.signin {
+  margin-top: $base-margin;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+
+  &__title {
+    font-family: $fantasy-font;
+    font-size: $base-font-size*1.6;
+    color: $color-dark;
+    margin-bottom: $base-margin;
+  }
+
+  &__button {
+    display: block;
+    background-color: $color-blue-dark;
+    color: $color-light;
+    padding: $base-padding;
+    margin: $base-margin*2 auto;
+    border: none;
+    border-radius: 5px;
+    font-size: $base-font-size;
+    font-weight: bold;
+  }
+}
+
+@media ALL and (min-width: 768px) {
+  .signin {
+    width: 100%;
+    display: flex;
+    background-color: $color-light;
+    border-radius: 5px;
+    margin-top: 0;
+
+    &__title {
+      display:none;
+    }
+
+    &__button {
+      align-self: flex-end;
+      margin: $base-margin;
+    }
+  }
+}

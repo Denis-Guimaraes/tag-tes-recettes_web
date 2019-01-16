@@ -1,0 +1,47 @@
+@import 'src/styles/vars';
+
+.signup {
+  margin-top: $base-margin;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+
+  &__title {
+    font-family: $fantasy-font;
+    font-size: $base-font-size*1.6;
+    color: $color-dark;
+    margin-bottom: $base-margin;
+  }
+
+  &__button {
+    display: block;
+    background-color: $color-blue-dark;
+    color: $color-light;
+    padding: $base-padding;
+    margin: $base-margin*2 auto;
+    border: none;
+    border-radius: 5px;
+    font-size: $base-font-size;
+    font-weight: bold;
+  }
+}
+
+@media ALL and (min-width: 768px) {
+  .signup {
+    display: block;
+    background-color: $color-light;
+    border-radius: 5px;
+    padding: 0 $base-padding*2;
+
+    &__title {
+      width: 100%;
+    }
+
+    &__button {
+      align-self: flex-end;
+      margin-bottom: $base-margin;
+    }
+  }
+}
