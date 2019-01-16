@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 // Local import
 import Home from 'src/components/Home';
 import Signin from 'src/components/Signin';
+import Signup from 'src/components/Signup';
 
 // Styles
 import './main.scss';
@@ -15,6 +16,7 @@ const Main = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/connexion" component={Signin} />
+      <Route path="/inscription" component={Signup} />
     </Switch>
   </main>
 );

@@ -1,7 +1,9 @@
 // initial state
 const initialState = {
+  username: '',
   email: '',
   password: '',
+  confirmPassword: '',
 };
 
 // Action type
