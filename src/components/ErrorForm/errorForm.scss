@@ -1,0 +1,9 @@
+@import 'src/styles/vars';
+
+.error-form {
+  display: block;
+  padding: $base-padding/4;
+  text-align: center;
+  color: $color-red;
+  font-size: $base-font-size
+}

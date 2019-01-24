@@ -1,4 +1,4 @@
-// initial state
+// Initial state
 const initialState = {
   username: '',
   email: '',
@@ -9,7 +9,7 @@ const initialState = {
 // Action type
 const ON_CHANGE = 'ON_CHANGE';
 
-// reducer
+// Reducer
 const InputReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ON_CHANGE:
@@ -22,12 +22,12 @@ const InputReducer = (state = initialState, action = {}) => {
   }
 };
 
-// action creator
+// Action creator
 export const onChange = (nameField, value) => ({
   type: ON_CHANGE,
   nameField,
   value,
 });
 
-// export
+// Export
 export default InputReducer;

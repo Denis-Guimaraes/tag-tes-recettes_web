@@ -7,7 +7,7 @@ import { onChange } from 'src/store/reducers/InputReducer';
 
 // Code
 const mapStateToProps = state => ({
-  email: state.email,
+  email: state.input.email,
 });
 
 const mapDispatchToProps = dispatch => ({

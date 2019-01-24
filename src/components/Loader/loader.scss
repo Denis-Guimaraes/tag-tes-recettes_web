@@ -1,0 +1,23 @@
+@import 'src/styles/vars';
+
+@keyframes move {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loader {
+  width: 10em;
+  margin: auto;
+  background-color: $color-blue-light;
+
+  &-animate {
+    width: 0%;
+    height: 0.5rem;
+    background-color: $color-blue-dark;
+    animation: move 1.5s linear infinite;
+  }
+}
