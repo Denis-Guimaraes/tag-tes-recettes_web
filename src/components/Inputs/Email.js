@@ -24,11 +24,10 @@ class Email extends React.Component {
 
 
   checkEmail = (email) => {
-    const good = /[a-z0-9._%+!$&*=^|~#%'`?{}/-]+@([a-z0-9-]+\.){1,}([a-z]{2,16})/;
     if (email === '') {
       return 'input__text';
     }
-    if (email.match(good)) {
+    if (email.indexOf('@') > 0) {
       return 'input__text input__text--good';
     }
     return 'input__text input__text--bad';

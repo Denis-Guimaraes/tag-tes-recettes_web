@@ -4,7 +4,7 @@ import React from 'react';
 // Local import
 import Header from 'src/components/Header';
 import Nav from 'src/components/Nav';
-import Main from 'src/components/Main';
+import Main from 'src/containers/Main';
 import Footer from 'src/components/Footer';
 
 // Styles
