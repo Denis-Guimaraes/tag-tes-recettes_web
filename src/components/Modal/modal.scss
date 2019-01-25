@@ -1,0 +1,42 @@
+@import 'src/styles/vars';
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  background-color: $color-light;
+  border: 10px solid $color-dark;
+  border-top: 25px solid $color-dark;
+  border-radius: 5px;
+  padding: $base-padding/2;
+  text-align: center;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__message {
+    display: block;
+    padding: $base-padding/4;
+  }
+
+  &__button {
+    align-self: flex-end;
+    margin-top: $base-margin;
+    padding: $base-padding;
+    background-color: $color-blue-dark;
+    color: $color-light;
+    font-size: $base-font-size;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+  }
+}

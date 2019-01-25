@@ -7,7 +7,7 @@ import { onChange } from 'src/store/reducers/InputReducer';
 
 // Code
 const mapStateToProps = state => ({
-  confirmPassword: state.confirmPassword,
+  confirmPassword: state.input.confirmPassword,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -19,7 +19,7 @@ class Email extends React.Component {
     const { onChange } = this.props;
     const { value } = evt.target;
     const fieldName = evt.target.name;
-    onChange(fieldName, value);
+    onChange(fieldName, value.trim());
   }
 
 

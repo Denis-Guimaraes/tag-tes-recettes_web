@@ -19,7 +19,7 @@ class Password extends React.Component {
     const { onChange } = this.props;
     const { value } = evt.target;
     const fieldName = evt.target.name;
-    onChange(fieldName, value);
+    onChange(fieldName, value.trim());
   }
 
 
@@ -27,7 +27,7 @@ class Password extends React.Component {
     if (password === '') {
       return 'input__text';
     }
-    if (password.length >= 8) {
+    if (password.length >= 6) {
       return 'input__text input__text--good';
     }
     return 'input__text input__text--bad';

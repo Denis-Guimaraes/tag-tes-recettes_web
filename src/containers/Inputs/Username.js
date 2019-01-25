@@ -7,7 +7,7 @@ import { onChange } from 'src/store/reducers/InputReducer';
 
 // Code
 const mapStateToProps = state => ({
-  username: state.username,
+  username: state.input.username,
 });
 
 const mapDispatchToProps = dispatch => ({
