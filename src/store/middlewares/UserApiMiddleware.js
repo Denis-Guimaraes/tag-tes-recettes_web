@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Local import
-import { storeUserData, storeUserError } from 'src/store/reducers/UserReducer';
+import { storeUserData, storeUserMessage } from 'src/store/reducers/UserReducer';
 
 // Code
 // Preset axios
@@ -33,9 +33,10 @@ const UserApiMiddleware = store => next => (action) => {
           confirmPassword: storeData.input.confirmPassword,
         },
       }).then((response) => {
-        store.dispatch(storeUserData(response.data));
+        store.dispatch(storeUserData(response.data.userData));
+        store.dispatch(storeUserMessage(response.data.message));
       }).catch((error) => {
-        store.dispatch(storeUserError(error.response.data.error));
+        store.dispatch(storeUserMessage(error.response.data.error));
       });
       break;
     default:

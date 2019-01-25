@@ -11,6 +11,7 @@ import Password from 'src/containers/Inputs/Password';
 import ConfirmPassword from 'src/containers/Inputs/ConfirmPassword';
 import ErrorForm from 'src/components/ErrorForm';
 import Loader from 'src/components/Loader';
+import Modal from 'src/containers/Modal';
 
 // Styles
 import './signup.scss';
@@ -30,13 +31,12 @@ class Signup extends React.Component {
     password: PropTypes.string.isRequired,
     confirmPassword: PropTypes.string.isRequired,
     submitSignup: PropTypes.func.isRequired,
-    userData: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
-    userError: PropTypes.array.isRequired,
+    userMessage: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }
 
   componentDidUpdate() {
-    const { userData, userError } = this.props;
-    if (userData.email.length !== 0 || userError.length !== 0) {
+    const { userMessage } = this.props;
+    if (userMessage.length !== 0) {
       this.loaded();
     }
   }
@@ -78,22 +78,25 @@ class Signup extends React.Component {
 
 
   render() {
-    const { location } = this.props;
+    const { location, userMessage } = this.props;
     const { errorList, loading } = this.state;
     const signupClass = classNames('signup', {
       'signup--show': location.pathname === '/inscription',
     });
     return (
-      <form className={signupClass}>
-        <h2 className="signup__title">Inscription</h2>
-        <Username inputId="signup-username" />
-        <Email inputId="signup-email" />
-        <Password inputId="signup-password" />
-        <ConfirmPassword inputId="signup-confirm_password" />
-        {errorList.length > 0 && errorList.map(error => <ErrorForm key={uuid()} error={error} />)}
-        {loading && <Loader />}
-        <button type="button" className="signup__button" onClick={this.submitSignup}>Inscription</button>
-      </form>
+      <>
+        <form className={signupClass}>
+          <h2 className="signup__title">Inscription</h2>
+          <Username inputId="signup-username" />
+          <Email inputId="signup-email" />
+          <Password inputId="signup-password" />
+          <ConfirmPassword inputId="signup-confirm_password" />
+          {errorList.length > 0 && errorList.map(error => <ErrorForm key={uuid()} error={error} />)}
+          {loading && <Loader />}
+          <button type="button" className="signup__button" onClick={this.submitSignup}>Inscription</button>
+        </form>
+        {userMessage.length > 0 && <Modal />}
+      </>
     );
   }
 }

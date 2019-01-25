@@ -6,10 +6,12 @@
   background-color: $color-blue-dark;
   color: $color-light;
   font-size: $base-font-size;
-  margin: $base-margin;
+  margin: $base-margin $base-margin/2;
   padding: $base-padding;
   padding-top: 0;
   border-radius: 5px;
+  min-width: 10rem;
+  max-width: 20rem;
 
   &__label {
     padding: $base-padding;

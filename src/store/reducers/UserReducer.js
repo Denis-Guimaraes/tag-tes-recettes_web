@@ -1,15 +1,13 @@
 // Initial state
 const initialState = {
-  userData: {
-    username: '',
-    email: '',
-  },
-  userError: [],
+  userData: {},
+  userMessage: [],
 };
 
 // Action type
 const STORE_USER_DATA = 'STORE_USER_DATA';
-const STORE_USER_ERROR = 'STORE_USER_ERROR';
+const STORE_USER_MESSAGE = 'STORE_USER_MESSAGE';
+const DELETE_USER_MESSAGE = 'DELETE_USER_MESSAGE';
 
 // Reducer
 const UserReducer = (state = initialState, action = {}) => {
@@ -19,10 +17,15 @@ const UserReducer = (state = initialState, action = {}) => {
         ...state,
         userData: { ...action.value },
       };
-    case STORE_USER_ERROR:
+    case STORE_USER_MESSAGE:
       return {
         ...state,
-        userError: [...action.value],
+        userMessage: [...action.value],
+      };
+    case DELETE_USER_MESSAGE:
+      return {
+        ...state,
+        userMessage: [],
       };
     default:
       return state;
@@ -34,9 +37,12 @@ export const storeUserData = value => ({
   type: STORE_USER_DATA,
   value,
 });
-export const storeUserError = value => ({
-  type: STORE_USER_ERROR,
+export const storeUserMessage = value => ({
+  type: STORE_USER_MESSAGE,
   value,
+});
+export const deleteUserMessage = () => ({
+  type: DELETE_USER_MESSAGE,
 });
 
 // Export
