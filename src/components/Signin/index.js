@@ -49,7 +49,8 @@ class Signin extends React.Component {
     return errorList;
   }
 
-  submitSignin = () => {
+  submitSignin = (evt) => {
+    evt.preventDefault();
     const validateData = this.validateData();
     const { submitSignin } = this.props;
     if (validateData.length === 0) {
@@ -74,16 +75,14 @@ class Signin extends React.Component {
     const signinClass = classNames('signin',
       { 'signin--show': location.pathname === '/connexion' });
     return (
-      <form className={signinClass}>
+      <form className={signinClass} onSubmit={this.submitSignin}>
         <h2 className="signin__title">Connexion</h2>
         <Email inputId="signin-email" />
         <Password inputId="signin-password" />
         <div className="signin__button--down">
           {errorList.length > 0 && errorList.map(error => <ErrorForm key={uuid()} error={error} />)}
           {loading && <Loader />}
-          <button type="button" className="signin__button" onClick={this.submitSignin}>
-            Connexion
-          </button>
+          <button type="submit" className="signin__button">Connexion</button>
         </div>
       </form>
     );

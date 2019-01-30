@@ -3,6 +3,7 @@ import axios from 'axios';
 
 // Local import
 import { storeUserData, storeUserMessage } from 'src/store/reducers/UserReducer';
+import { resetInput } from 'src/store/reducers/InputReducer';
 
 // Code
 // Preset axios
@@ -34,10 +35,10 @@ const UserApiMiddleware = store => next => (action) => {
           confirmPassword: storeData.input.confirmPassword,
         },
       }).then((response) => {
-        store.dispatch(storeUserData(response.data.userData));
-        store.dispatch(storeUserMessage(response.data.message));
+        store.dispatch(storeUserMessage(response.data));
+        store.dispatch(resetInput());
       }).catch((error) => {
-        store.dispatch(storeUserMessage(error.response.data.error));
+        store.dispatch(storeUserMessage(error.response.data));
       });
       break;
     case SIGNIN:
@@ -53,9 +54,10 @@ const UserApiMiddleware = store => next => (action) => {
           password: storeData.input.password,
         },
       }).then((response) => {
-        store.dispatch(storeUserData(response.data.userData));
+        store.dispatch(storeUserData(response.data.user, response.data.token));
+        store.dispatch(resetInput());
       }).catch((error) => {
-        store.dispatch(storeUserMessage(error.response.data.error));
+        store.dispatch(storeUserMessage(error.response.data));
       });
       break;
     default:

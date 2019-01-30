@@ -30,6 +30,7 @@
 
 @media ALL and (min-width: 768px) {
   .signin {
+    position: relative;
     width: 100%;
     display: flex;
     background-color: $color-light;

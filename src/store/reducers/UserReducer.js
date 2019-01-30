@@ -1,6 +1,7 @@
 // Initial state
 const initialState = {
   userData: {},
+  userToken: '',
   userMessage: [],
 };
 
@@ -15,12 +16,13 @@ const UserReducer = (state = initialState, action = {}) => {
     case STORE_USER_DATA:
       return {
         ...state,
-        userData: { ...action.value },
+        userData: { ...action.user },
+        userToken: action.token,
       };
     case STORE_USER_MESSAGE:
       return {
         ...state,
-        userMessage: [...action.value],
+        userMessage: [...action.message],
       };
     case DELETE_USER_MESSAGE:
       return {
@@ -33,13 +35,14 @@ const UserReducer = (state = initialState, action = {}) => {
 };
 
 // Action creator
-export const storeUserData = value => ({
+export const storeUserData = (user, token) => ({
   type: STORE_USER_DATA,
-  value,
+  user,
+  token,
 });
-export const storeUserMessage = value => ({
+export const storeUserMessage = message => ({
   type: STORE_USER_MESSAGE,
-  value,
+  message,
 });
 export const deleteUserMessage = () => ({
   type: DELETE_USER_MESSAGE,

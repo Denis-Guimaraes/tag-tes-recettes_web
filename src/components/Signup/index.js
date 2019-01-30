@@ -55,7 +55,8 @@ class Signup extends React.Component {
     return errorList;
   }
 
-  submitSignup = () => {
+  submitSignup = (evt) => {
+    evt.preventDefault();
     const validateData = this.validateData();
     const { submitSignup } = this.props;
     if (validateData.length === 0) {
@@ -83,7 +84,7 @@ class Signup extends React.Component {
     });
     return (
       <>
-        <form className={signupClass}>
+        <form className={signupClass} onSubmit={this.submitSignup}>
           <h2 className="signup__title">Inscription</h2>
           <Username inputId="signup-username" />
           <Email inputId="signup-email" />
@@ -91,9 +92,7 @@ class Signup extends React.Component {
           <ConfirmPassword inputId="signup-confirm_password" />
           {errorList.length > 0 && errorList.map(error => <ErrorForm key={uuid()} error={error} />)}
           {loading && <Loader />}
-          <button type="button" className="signup__button" onClick={this.submitSignup}>
-            Inscription
-          </button>
+          <button type="submit" className="signup__button">Inscription</button>
         </form>
       </>
     );
