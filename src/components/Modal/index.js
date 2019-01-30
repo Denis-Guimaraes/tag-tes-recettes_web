@@ -1,6 +1,7 @@
 // NPM import
 import React from 'react';
 import PropTypes from 'prop-types';
+import uuid from 'uuid/v4';
 
 // Components import
 
@@ -11,7 +12,7 @@ import './modal.scss';
 const Modal = ({ userMessage, closeModal }) => (
   <div className="modal-wrapper">
     <div className="modal">
-      <span className="modal__message">{userMessage[0]}</span>
+      {userMessage.map(message => <span key={uuid()} className="modal__message">{message}</span>)}
       <button type="button" className="modal__button" onClick={closeModal}>Fermer</button>
     </div>
   </div>

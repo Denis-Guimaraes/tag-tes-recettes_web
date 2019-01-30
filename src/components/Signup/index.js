@@ -11,7 +11,6 @@ import Password from 'src/containers/Inputs/Password';
 import ConfirmPassword from 'src/containers/Inputs/ConfirmPassword';
 import ErrorForm from 'src/components/ErrorForm';
 import Loader from 'src/components/Loader';
-import Modal from 'src/containers/Modal';
 
 // Styles
 import './signup.scss';
@@ -44,8 +43,7 @@ class Signup extends React.Component {
   validateData = () => {
     const errorList = [];
     const { email, password, confirmPassword } = this.props;
-    const goodEmail = /[a-z0-9._%+!$&*=^|~#%'`?{}/-]+@([a-z0-9-]+\.){1,}([a-z]{2,16})/;
-    if (!email.match(goodEmail)) {
+    if (email.indexOf('@') <= 0) {
       errorList.push('Email : mauvais format d\'email');
     }
     if (password.length < 6) {
@@ -57,7 +55,8 @@ class Signup extends React.Component {
     return errorList;
   }
 
-  submitSignup = () => {
+  submitSignup = (evt) => {
+    evt.preventDefault();
     const validateData = this.validateData();
     const { submitSignup } = this.props;
     if (validateData.length === 0) {
@@ -78,14 +77,14 @@ class Signup extends React.Component {
 
 
   render() {
-    const { location, userMessage } = this.props;
+    const { location } = this.props;
     const { errorList, loading } = this.state;
     const signupClass = classNames('signup', {
       'signup--show': location.pathname === '/inscription',
     });
     return (
       <>
-        <form className={signupClass}>
+        <form className={signupClass} onSubmit={this.submitSignup}>
           <h2 className="signup__title">Inscription</h2>
           <Username inputId="signup-username" />
           <Email inputId="signup-email" />
@@ -93,9 +92,8 @@ class Signup extends React.Component {
           <ConfirmPassword inputId="signup-confirm_password" />
           {errorList.length > 0 && errorList.map(error => <ErrorForm key={uuid()} error={error} />)}
           {loading && <Loader />}
-          <button type="button" className="signup__button" onClick={this.submitSignup}>Inscription</button>
+          <button type="submit" className="signup__button">Inscription</button>
         </form>
-        {userMessage.length > 0 && <Modal />}
       </>
     );
   }

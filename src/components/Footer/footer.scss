@@ -7,10 +7,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: $base-font-size*0.9;
 
   &__link {
     padding: $base-padding/2;
-    font-size: $base-font-size*0.9;
     text-decoration: underline; 
   }
 }

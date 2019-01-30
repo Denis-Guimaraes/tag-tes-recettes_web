@@ -1,6 +1,7 @@
 @import 'src/styles/vars';
 
 .signup {
+  position: relative;
   margin-top: $base-margin;
   display: none;
 
@@ -23,7 +24,7 @@
     margin: $base-margin*2 auto;
     border: none;
     border-radius: 5px;
-    font-size: $base-font-size;
+    font-size: $base-font-size*0.9;
     font-weight: bold;
   }
 }

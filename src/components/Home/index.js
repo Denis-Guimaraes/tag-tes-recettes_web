@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Local import
-import Signin from 'src/components/Signin';
+import Signin from 'src/containers/Signin';
 import Signup from 'src/containers/Signup';
 import Resume from './Resume';
 

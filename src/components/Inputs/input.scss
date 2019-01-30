@@ -5,13 +5,10 @@
   flex-direction: column;
   background-color: $color-blue-dark;
   color: $color-light;
-  font-size: $base-font-size;
   margin: $base-margin $base-margin/2;
   padding: $base-padding;
   padding-top: 0;
   border-radius: 5px;
-  min-width: 10rem;
-  max-width: 20rem;
 
   &__label {
     padding: $base-padding;
@@ -20,9 +17,10 @@
   &__text {
     background-color: $color-light;
     border: none;
-    border-bottom: 3px solid transparent;
-    font-size: $base-font-size;
-    padding: $base-padding;
+    border: 3px solid transparent;
+    border-radius: 0 0 3px 3px;
+    padding: $base-padding/2;
+    font-size: $base-font-size*0.9;
 
     &--good {
       border-bottom: 3px solid $color-dark;
