@@ -3,15 +3,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 // Local import
-import Main from 'src/components/Main';
+import Router from 'src/components/Main/Router';
 
 // Code
 const mapStateToProps = state => ({
   userMessage: state.user.userMessage,
-  userToken: state.user.userToken,
 });
 
 const mapDispatchToProps = () => ({});
 
 // Export
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Router));

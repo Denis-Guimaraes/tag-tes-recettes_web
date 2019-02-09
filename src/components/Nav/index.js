@@ -1,32 +1,24 @@
 // NPM import
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Local import
-import LinkSignin from './LinkSignin';
-import LinkSignup from './LinkSignup';
-import LinkHome from './LinkHome';
+import NavDisconnected from './NavDisconnected';
+import NavConnected from './NavConnected';
 
 // Styles
 import './nav.scss';
 
 // Code
-const Nav = ({ location }) => (
+const Nav = ({ userToken }) => (
   <nav className="nav">
-    <ul className="nav-list">
-      {location.pathname !== '/connexion' && <LinkSignin />}
-      {location.pathname !== '/' && <LinkHome />}
-      {location.pathname !== '/inscription' && <LinkSignup />}
-    </ul>
+    {userToken.length <= 0 ? <NavDisconnected /> : <NavConnected />}
   </nav>
 );
 
 Nav.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
+  userToken: PropTypes.string.isRequired,
 };
 
 // Export
-export default withRouter(Nav);
+export default Nav;
