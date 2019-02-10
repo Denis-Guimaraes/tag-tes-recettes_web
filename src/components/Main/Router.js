@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 
 // Local import
 import Books from 'src/components/Books';
+import Recipes from 'src/components/Recipes';
+import AddRecipe from 'src/components/AddRecipe';
+import SearchRecipes from 'src/components/SearchRecipes';
 import Modal from 'src/containers/Modal';
 // Styles
 import './main.scss';
@@ -13,9 +16,12 @@ import './main.scss';
 const Router = ({ userMessage }) => (
   <main className="main">
     <Switch>
-      <Redirect from="/connexion" to="/" />
-      <Redirect from="/inscription" to="/" />
-      <Route path="/" component={Books} />
+      <Route exact path="/mes-livres" component={Books} />
+      <Route exact path="/mes-livres/:id(\d+)/recettes" component={Recipes} />
+      <Route exact path="/mes-recettes" component={Recipes} />
+      <Route exact path="/ajouter" component={AddRecipe} />
+      <Route exact path="/rechercher" component={SearchRecipes} />
+      <Redirect to="/mes-livres" />
     </Switch>
     {userMessage.length > 0 && <Modal />}
   </main>

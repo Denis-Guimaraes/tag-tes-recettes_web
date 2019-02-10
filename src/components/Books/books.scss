@@ -1,11 +1,42 @@
 @import 'src/styles/vars';
 
 .books {
-  padding: $base-padding;
-  background-color: $color-dark;
-  color: $color-light;
+  width: 100%;
+
+  &-tabs {
+    border-bottom: 1px solid $color-dark;
+    display: flex;
+
+    &__tab {
+      padding: $base-padding/2;
+      margin: 0 $base-margin/4 0 0;
+      border: 1px solid $color-dark;
+      border-bottom: none;
+      border-radius: 5px 5px 0 0;
+
+      &--active {
+        background-color: $color-dark;
+        color: $color-light;
+      }
+    }
+  }
+}
+.book {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: $base-font-size*0.9;
+  padding: $base-padding;
+  margin: $base-margin 0;
+  border: 1px solid $color-blue-dark;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px $color-dark;
+
+  &__title {
+    padding-right: $base-padding;
+  }
+
+  &__icon {
+    font-size: $base-font-size*1.4;
+    color: $color-blue-dark;
+  }
 }

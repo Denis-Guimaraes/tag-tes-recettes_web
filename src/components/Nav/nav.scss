@@ -5,12 +5,14 @@
 
   &-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
   &-item {
     display: flex;
     flex-direction: column;
+    padding: $base-padding/2 $base-padding;
 
     &__icon {
       margin: auto;

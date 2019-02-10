@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FaBookOpen } from 'react-icons/fa';
+import { FaFileAlt } from 'react-icons/fa';
 
 // Local import
 
@@ -12,11 +12,11 @@ import './nav.scss';
 
 // Code
 const LinkMyRecipes = ({ location }) => {
-  const iconClass = classNames('nav-item__icon', { 'nav-item__icon--current': location.pathname === '/' });
+  const iconClass = classNames('nav-item__icon', { 'nav-item__icon--current': location.pathname === '/mes-recettes' });
   return (
     <li>
-      <Link to="/" className="nav-item">
-        <FaBookOpen className={iconClass} />Accueil
+      <Link to="/mes-recettes" className="nav-item">
+        <FaFileAlt className={iconClass} />Mes recettes
       </Link>
     </li>
   );

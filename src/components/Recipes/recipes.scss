@@ -1,0 +1,11 @@
+@import 'src/styles/vars';
+
+.recipes {
+  padding: $base-padding;
+  background-color: $color-dark;
+  color: $color-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $base-font-size*0.9;
+}

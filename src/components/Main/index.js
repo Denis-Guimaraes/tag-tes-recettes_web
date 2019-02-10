@@ -1,6 +1,6 @@
 // NPM import
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Local import
@@ -22,9 +22,12 @@ const Main = ({ userMessage, userToken }) => {
   }
   return (
     <main className="main">
-      <Route exact path="/" component={Home} />
-      <Route path="/connexion" component={Signin} />
-      <Route path="/inscription" component={Signup} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/connexion" component={Signin} />
+        <Route path="/inscription" component={Signup} />
+        <Redirect to="/" />
+      </Switch>
       {userMessage.length > 0 && <Modal />}
     </main>
   );
