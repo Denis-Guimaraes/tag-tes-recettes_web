@@ -9,7 +9,9 @@ import {
 // Local import
 import InputReducer from './reducers/InputReducer';
 import UserReducer from './reducers/UserReducer';
+import BookReducer from './reducers/BookReducer';
 import UserApiMiddleware from './middlewares/UserApiMiddleware';
+import BookApiMiddleware from './middlewares/BookApiMiddleware';
 
 // Code
 // Preload store
@@ -35,12 +37,13 @@ if (window.devToolsExtension) {
   // eslint-disable-next-line no-underscore-dangle
   devTools.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 }
-const appliedMiddleware = applyMiddleware(UserApiMiddleware);
+const appliedMiddleware = applyMiddleware(UserApiMiddleware, BookApiMiddleware);
 const enhancers = compose(appliedMiddleware, ...devTools);
 // Prepare reducers
 const rootReducer = combineReducers({
   input: InputReducer,
   user: UserReducer,
+  book: BookReducer,
 });
 // Create store
 const store = createStore(rootReducer, { user: preloadStore() }, enhancers);
