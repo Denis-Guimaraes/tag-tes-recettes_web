@@ -1,19 +1,29 @@
 // NPM import
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // Local import
-import BookList from './BookList';
-import MagazineList from './MagazineList';
+import BookList from 'src/containers/Books/BookList';
+import MagazineList from 'src/containers/Books/MagazineList';
 
 // Styles
 import './books.scss';
 
 // Code
 class Books extends React.Component {
+  static propTypes = {
+    getAllBooks: PropTypes.func.isRequired,
+  }
+
   state = {
     bookTab: true,
     magazineTab: false,
+  }
+
+  componentDidMount() {
+    const { getAllBooks } = this.props;
+    getAllBooks();
   }
 
   changeTab = () => {

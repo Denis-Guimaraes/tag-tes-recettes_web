@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // Local import
-import Books from 'src/components/Books';
+import Books from 'src/containers/Books';
 import Recipes from 'src/components/Recipes';
 import AddRecipe from 'src/components/AddRecipe';
 import SearchRecipes from 'src/components/SearchRecipes';
