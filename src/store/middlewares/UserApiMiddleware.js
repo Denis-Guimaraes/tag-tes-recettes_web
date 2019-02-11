@@ -38,7 +38,13 @@ const UserApiMiddleware = store => next => (action) => {
         store.dispatch(storeUserMessage(response.data));
         store.dispatch(resetInput());
       }).catch((error) => {
-        store.dispatch(storeUserMessage(error.response.data));
+        if (!error.response) {
+          const message = ['Le serveur ne répond pas. Veuillez réessayer plus tard!'];
+          store.dispatch(storeUserMessage(message));
+        }
+        else {
+          store.dispatch(storeUserMessage(error.response.data));
+        }
       });
       break;
     case SIGNIN:
@@ -54,10 +60,18 @@ const UserApiMiddleware = store => next => (action) => {
           password: storeData.input.password,
         },
       }).then((response) => {
+        const data = JSON.stringify(response.data);
+        window.localStorage.setItem('user', data);
         store.dispatch(storeUserData(response.data.user, response.data.token));
         store.dispatch(resetInput());
       }).catch((error) => {
-        store.dispatch(storeUserMessage(error.response.data));
+        if (!error.response) {
+          const message = ['Le serveur ne répond pas. Veuillez réessayer plus tard!'];
+          store.dispatch(storeUserMessage(message));
+        }
+        else {
+          store.dispatch(storeUserMessage(error.response.data));
+        }
       });
       break;
     default:

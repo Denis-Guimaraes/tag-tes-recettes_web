@@ -1,0 +1,75 @@
+@import 'src/styles/vars';
+
+.recipes {
+  width: 100%;
+}
+.recipe {
+  padding: $base-padding;
+  margin: $base-margin 0;
+  border: 1px solid $color-blue-dark;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px $color-dark;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    &__name {
+      color : $color-dark;
+      font-weight: bold;
+      padding: $base-padding 0;
+    }
+
+    &__book {
+      padding: $base-padding/2 0;
+    }
+
+    &__page {
+      padding: $base-padding/2 0;
+    }
+  }
+
+  &-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon {
+      color: $color-blue-dark;
+      font-size: $base-font-size*1.4;
+    }
+  }
+
+  &-tags {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__tag {
+      padding: $base-padding/2 $base-padding*2;
+      margin: $base-margin/4 $base-margin/2;
+      margin-left: 0;
+      background-color: $color-light;
+      border: 1px solid $color-blue-light;
+      border-radius: 50px;
+    }
+  }
+}
+
+@media ALL and (min-width: 768px) {
+  .recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .recipe {
+    width: 45%;
+  }
+}
