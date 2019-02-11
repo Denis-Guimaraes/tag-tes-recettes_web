@@ -13,6 +13,7 @@
       border: 1px solid $color-dark;
       border-bottom: none;
       border-radius: 5px 5px 0 0;
+      cursor: pointer;
 
       &--active {
         background-color: $color-dark;
@@ -31,6 +32,18 @@
   border-radius: 2px;
   box-shadow: 1px 1px 2px $color-dark;
 
+  &-list {
+    display: none;
+
+    &__title {
+      display: none;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
   &__title {
     padding-right: $base-padding;
   }
@@ -38,5 +51,31 @@
   &__icon {
     font-size: $base-font-size*1.4;
     color: $color-blue-dark;
+  }
+}
+
+@media ALL and (min-width: 768px) {
+  .books {
+    display: flex;
+    justify-content: space-around;
+
+    &-tabs {
+      display: none;
+    }
+  }
+
+  .book {
+    &-list {
+      display: block;
+      width: 45%;
+
+      &__title {
+        display: block;
+        padding: $base-padding 0;
+        font-size: $base-font-size*1.2;
+        font-weight: bold;
+        color: $color-dark;
+      }
+    }
   }
 }

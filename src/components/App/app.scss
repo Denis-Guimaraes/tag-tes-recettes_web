@@ -8,5 +8,14 @@
 
   &-wrapper {
     flex-grow: 2;
+    max-width: 1440px;
+  }
+}
+
+@media ALL and (min-width: 1440px) {
+  .app {
+    &-wrapper {
+      margin: 0 auto;
+    }
   }
 }

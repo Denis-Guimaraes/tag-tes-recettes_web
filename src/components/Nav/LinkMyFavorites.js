@@ -11,22 +11,22 @@ import { FaFileAlt } from 'react-icons/fa';
 import './nav.scss';
 
 // Code
-const LinkMyRecipes = ({ location }) => {
+const LinkMyFavorites = ({ location }) => {
   const iconClass = classNames('nav-item__icon', { 'nav-item__icon--current': location.pathname === '/mes-recettes' });
   return (
     <li>
-      <Link to="/mes-recettes" className="nav-item">
-        <FaFileAlt className={iconClass} />Mes recettes
+      <Link to="/mes-favorites" className="nav-item">
+        <FaFileAlt className={iconClass} />Mes favorites
       </Link>
     </li>
   );
 };
 
-LinkMyRecipes.propTypes = {
+LinkMyFavorites.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
 };
 
 // Export
-export default withRouter(LinkMyRecipes);
+export default withRouter(LinkMyFavorites);

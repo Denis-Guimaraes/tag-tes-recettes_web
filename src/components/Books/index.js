@@ -29,14 +29,16 @@ class Books extends React.Component {
       { 'books-tabs__tab--active': bookTab });
     const magazineTabClass = classNames('books-tabs__tab',
       { 'books-tabs__tab--active': magazineTab });
+    const bookListClass = classNames('book-list', { 'book-list--active': bookTab });
+    const magazineListClass = classNames('book-list', { 'book-list--active': magazineTab });
     return (
       <section className="books">
         <div className="books-tabs">
           <span className={bookTabClass} onClick={this.changeTab}>Mes livres</span>
           <span className={magazineTabClass} onClick={this.changeTab}>Mes magazines</span>
         </div>
-        {bookTab && <BookList />}
-        {magazineTab && <MagazineList />}
+        <BookList divClass={bookListClass} />
+        <MagazineList divClass={magazineListClass} />
       </section>
     );
   }

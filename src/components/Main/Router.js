@@ -18,7 +18,7 @@ const Router = ({ userMessage }) => (
     <Switch>
       <Route exact path="/mes-livres" component={Books} />
       <Route exact path="/mes-livres/:id(\d+)/recettes" component={Recipes} />
-      <Route exact path="/mes-recettes" component={Recipes} />
+      <Route exact path="/mes-favorites" component={Recipes} />
       <Route exact path="/ajouter" component={AddRecipe} />
       <Route exact path="/rechercher" component={SearchRecipes} />
       <Redirect to="/mes-livres" />

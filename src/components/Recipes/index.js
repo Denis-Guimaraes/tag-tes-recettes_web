@@ -1,7 +1,7 @@
 // NPM import
 import React from 'react';
-
 // Local import
+import Recipe from './Recipe';
 
 // Styles
 import './recipes.scss';
@@ -10,7 +10,11 @@ import './recipes.scss';
 
 const Recipes = () => (
   <section className="recipes">
-    <p className="recipes__text">Mes recettes.</p>
+    <Recipe />
+    <Recipe />
+    <Recipe />
+    <Recipe />
+    <Recipe />
   </section>
 );
 
