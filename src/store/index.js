@@ -10,6 +10,7 @@ import {
 import InputReducer from './reducers/InputReducer';
 import UserReducer from './reducers/UserReducer';
 import BookReducer from './reducers/BookReducer';
+import RecipeReducer from './reducers/RecipeReducer';
 import UserApiMiddleware from './middlewares/UserApiMiddleware';
 import BookApiMiddleware from './middlewares/BookApiMiddleware';
 
@@ -44,6 +45,7 @@ const rootReducer = combineReducers({
   input: InputReducer,
   user: UserReducer,
   book: BookReducer,
+  recipe: RecipeReducer,
 });
 // Create store
 const store = createStore(rootReducer, { user: preloadStore() }, enhancers);

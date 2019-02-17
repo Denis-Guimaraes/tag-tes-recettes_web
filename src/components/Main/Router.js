@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // Local import
 import Books from 'src/containers/Books';
-import Recipes from 'src/components/Recipes';
+import Recipes from 'src/containers/Recipes';
 import AddRecipe from 'src/components/AddRecipe';
 import SearchRecipes from 'src/components/SearchRecipes';
 import Modal from 'src/containers/Modal';
