@@ -23,10 +23,9 @@ const Recipe = ({ recipeData }) => (
       </Link>
     </div>
     <div className="recipe-tags">
-      <span className="recipe-tags__tag">Chocolat</span>
-      <span className="recipe-tags__tag">Tarte</span>
-      <span className="recipe-tags__tag">tag 3</span>
-      <span className="recipe-tags__tag">tag 4</span>
+      {recipeData.tags.map(tag => (
+        <span className="recipe-tags__tag" key={tag.id}>{tag.name}</span>
+      ))}
     </div>
   </div>
 );
@@ -37,7 +36,13 @@ Recipe.propTypes = {
     page: PropTypes.number.isRequired,
     book: PropTypes.shape({
       name: PropTypes.string.isRequired,
-    }),
+    }).isRequired,
+    tags: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      }).isRequired,
+    ).isRequired,
   }).isRequired,
 };
 
