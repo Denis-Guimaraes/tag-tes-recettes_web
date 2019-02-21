@@ -13,11 +13,21 @@ class Recipes extends React.Component {
   static propTypes = {
     getRecipes: PropTypes.func.isRequired,
     recipes: PropTypes.array.isRequired,
+    match: PropTypes.shape({
+      path: PropTypes.string.isRequired,
+    }).isRequired,
   }
 
   componentDidMount() {
     const { getRecipes } = this.props;
     getRecipes();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { match, getRecipes } = this.props;
+    if (match.path !== prevProps.match.path) {
+      getRecipes();
+    }
   }
 
   render() {
@@ -29,5 +39,6 @@ class Recipes extends React.Component {
     );
   }
 }
+
 // Export
 export default Recipes;
