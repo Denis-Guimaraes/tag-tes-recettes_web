@@ -12,6 +12,8 @@ jobs:
       - run:
           name: "Run Jest and Collect Coverage Reports"
           command: yarn test
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
       - store_artifacts:
           path: coverage
 
