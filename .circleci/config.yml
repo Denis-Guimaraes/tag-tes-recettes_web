@@ -10,10 +10,8 @@ jobs:
           name: Install Dependencies
           command: yarn
       - run:
-          name: "Run Jest and Collect Coverage Reports"
+          name: "Run test and store coverage"
           command: yarn test
-          environment:
-            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
       - store_artifacts:
           path: coverage
 

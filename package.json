@@ -64,14 +64,13 @@
     "build:prod": "NODE_ENV=production webpack --mode production",
     "build:prod:win": "set NODE_ENV=production && webpack --mode production",
     "save-deps": "rm -rf node_modules && npm update --save && npm update --save-dev",
-    "test": "jest --ci --runInBand --reporters=default --reporters=jest-junit --collectCoverage=true"
+    "test": "jest --collectCoverage=true"
   },
   "jestWebpackResolver": {
     "webpackConfig": "webpack.config.js"
   },
   "jest": {
     "verbose": true,
-    "reporters": ["default", "jest-junit"],
     "resolver": "jest-webpack-resolver",
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/components/__mocks__/fileMock.js",
