@@ -10,5 +10,8 @@ jobs:
           name: Install Dependencies
           command: yarn
       - run:
-          name: Run Tests
-          command: yarn test
+          name: "Run Jest and Collect Coverage Reports"
+          command: jest --collectCoverage=true
+      - store_artifacts:
+          path: coverage
+
