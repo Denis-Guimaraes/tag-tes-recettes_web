@@ -14,4 +14,3 @@ jobs:
           command: yarn test
       - store_artifacts:
           path: coverage
-
