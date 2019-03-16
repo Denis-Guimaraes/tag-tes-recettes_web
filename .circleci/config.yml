@@ -7,14 +7,21 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          name: Restore Yarn Package Cache
+           keys:
+            # when lock file changes, use increasingly general patterns to restore cache
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}-
+            - yarn-packages-v1-
       - run:
           name: Install Dependencies
-          command: npm ci
+          command: yarn install --frozen-lockfile
       - save_cache:
-          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          name: Save Yarn Package Cache
           paths:
-            - /home/circleci/.npm
+            - ~/.cache/yarn
+          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
       - run:
           name: Run Tests
-          command: npm test
+          command: yarn test
