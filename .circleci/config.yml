@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /var/www/html/tag-tes-recettes_web/
+    working_directory: ~/TTR
     docker:
       - image: circleci/node:8
     steps:
@@ -10,7 +10,7 @@ jobs:
           key: yarn-package-{{ checksum "yarn-lock" }}
       - run:
           name: Install Dependencies
-          command: yarn install --frozen-lockfile
+          command: yarn install
       - save_cache:
           key: yarn-package-{{ checksum "yarn.lock" }}
           paths:
