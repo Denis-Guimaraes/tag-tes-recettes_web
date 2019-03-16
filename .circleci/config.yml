@@ -9,7 +9,6 @@ jobs:
       - restore_cache:
           name: Restore Yarn Package Cache
            keys:
-            # when lock file changes, use increasingly general patterns to restore cache
             - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
             - yarn-packages-v1-{{ .Branch }}-
             - yarn-packages-v1-
