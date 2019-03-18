@@ -15,6 +15,6 @@ describe('Header', () => {
   });
   it('contain component Link', () => {
     const wrapper = shallow(<Header />);
-    expect(wrapper.contains(<Link />));
+    expect(wrapper.exists(Link)).toBe(true);
   });
 });

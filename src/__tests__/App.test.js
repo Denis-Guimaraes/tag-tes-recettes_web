@@ -17,18 +17,18 @@ describe('App', () => {
   });
   it('contain component Header', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Header />));
+    expect(wrapper.exists(Header)).toBe(true);
   });
   it('contain component Nav', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Nav />));
+    expect(wrapper.exists(Nav)).toBe(true);
   });
   it('contain component Main', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Main />));
+    expect(wrapper.exists(Main)).toBe(true);
   });
   it('contain Footer', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Footer />));
+    expect(wrapper.exists(Footer)).toBe(true);
   });
 });
