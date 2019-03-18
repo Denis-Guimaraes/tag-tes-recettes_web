@@ -11,7 +11,11 @@ jobs:
           command: yarn
       - run:
           name: Run test and store coverage
+<<<<<<< HEAD
           command: yarn test && CODECLIMATE_API_HOST=$CODECLIMATE_API_HOST CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN ./node_modules/.bin/codeclimate-test-reporter < /home/circleci/TTR/coverage/lcov.info
+=======
+          command: yarn test && ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
+>>>>>>> master
       - store_artifacts:
           path: coverage
 
