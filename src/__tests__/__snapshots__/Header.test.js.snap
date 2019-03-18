@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header match snapshot 1`] = `
+<header
+  className="header"
+>
+  <h1
+    className="header__title"
+  >
+    <Link
+      replace={false}
+      to="/"
+    >
+      Tag Tes Recettes
+    </Link>
+  </h1>
+</header>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer match snapshot 1`] = `
+<footer
+  className="footer"
+>
+  <p
+    className="footer__text"
+  >
+    © 
+    2019
+     Denis Guimaraes.
+  </p>
+  <ul>
+    <li
+      className="footer__link"
+    >
+      Mentions légales
+    </li>
+    <li
+      className="footer__link"
+    >
+      Contact
+    </li>
+  </ul>
+</footer>
+`;
