@@ -12,7 +12,8 @@ jobs:
       - run:
           name: Run test and store coverage
           command: yarn test && CODECLIMATE_API_HOST=$CODECLIMATE_API_HOST \
-            CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN \ ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
+            CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN \
+            ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
       - store_artifacts:
           path: coverage
 
