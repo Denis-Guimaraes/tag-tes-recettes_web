@@ -12,6 +12,7 @@
     "babel-eslint": "*",
     "babel-jest": "^24.5.0",
     "babel-loader": "*",
+    "codeclimate-test-reporter": "^0.5.1",
     "css-loader": "*",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",

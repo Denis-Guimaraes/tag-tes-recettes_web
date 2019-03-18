@@ -10,7 +10,8 @@ jobs:
           name: Install Dependencies
           command: yarn
       - run:
-          name: "Run test and store coverage"
-          command: yarn test
+          name: Run test and store coverage
+          command: yarn test && ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
       - store_artifacts:
           path: coverage
+
