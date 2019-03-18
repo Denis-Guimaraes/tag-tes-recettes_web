@@ -11,7 +11,7 @@ jobs:
           command: yarn
       - run:
           name: Run test and store coverage
-          command: yarn test && codeclimate-test-reporter < /var/www/html/tag-tes-recettes_web/coverage/lcov-report/lcov.info
+          command: yarn test && codeclimate-test-reporter < coverage/lcov.info
       - store_artifacts:
           path: coverage
 
