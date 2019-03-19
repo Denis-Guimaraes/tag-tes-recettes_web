@@ -4,9 +4,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 // Local import
-import Nav from '../index';
-import NavDisconnected from '../NavDisconnected';
-import NavConnected from '../NavConnected';
+import Nav from 'src/components/Nav/';
+import NavDisconnected from 'src/components/Nav/NavDisconnected';
+import NavConnected from 'src/components/Nav/NavConnected';
 
 describe('Nav', () => {
   let wrapper;
