@@ -10,7 +10,7 @@ describe('ErrorForm', () => {
   it('render without crashing', () => {
     wrapper = shallow(<ErrorForm {...props} />);
   });
-  it('contain component Resume', () => {
+  it('contain error message', () => {
     expect(wrapper.text()).toEqual(props.error);
   });
 });
