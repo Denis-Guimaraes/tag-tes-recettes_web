@@ -21,13 +21,13 @@
     "eslint-config-airbnb": "*",
     "eslint-import-resolver-webpack": "*",
     "eslint-plugin-import": "*",
+    "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-jsx-a11y": "*",
     "eslint-plugin-react": "*",
     "file-loader": "*",
     "html-webpack-plugin": "*",
     "ignore-styles": "*",
     "jest": "^24.5.0",
-    "jest-junit": "^6.3.0",
     "jest-webpack-resolver": "^0.3.0",
     "mini-css-extract-plugin": "*",
     "node-sass": "*",
@@ -74,8 +74,8 @@
     "verbose": true,
     "resolver": "jest-webpack-resolver",
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/components/__mocks__/fileMock.js",
-      "\\.(css|less|scss)$": "<rootDir>/src/components/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "<rootDir>/src/__mocks__/styleMock.js"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/enzyme.config.js"

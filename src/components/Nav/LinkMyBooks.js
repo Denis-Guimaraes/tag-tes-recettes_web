@@ -11,7 +11,7 @@ import { FaBook } from 'react-icons/fa';
 import './nav.scss';
 
 // Code
-const LinkMybooks = ({ location }) => {
+export const LinkMyBooks = ({ location }) => {
   const iconClass = classNames('nav-item__icon', { 'nav-item__icon--current': location.pathname === '/mes-livres' });
   return (
     <li>
@@ -22,11 +22,11 @@ const LinkMybooks = ({ location }) => {
   );
 };
 
-LinkMybooks.propTypes = {
+LinkMyBooks.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
 };
 
 // Export
-export default withRouter(LinkMybooks);
+export default withRouter(LinkMyBooks);
