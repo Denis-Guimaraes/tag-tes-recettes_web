@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // NPM import
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -7,7 +6,7 @@ import { Switch } from 'react-router-dom';
 import Router from 'src/components/Main/Router';
 import Modal from 'src/containers/Modal';
 
-describe('App', () => {
+describe('Router', () => {
   let wrapper;
   const props = { userMessage: [] };
   it('render without crashing', () => {
@@ -20,8 +19,7 @@ describe('App', () => {
     expect(wrapper.exists(Modal)).toBe(false);
   });
   it('userMessage.length > 0 contain component Modal', () => {
-    props.userMessage = ['111'];
-    wrapper = shallow(<Router {...props} />);
+    wrapper.setProps({ userMessage: ['message'] });
     expect(wrapper.exists(Modal)).toBe(true);
   });
 });

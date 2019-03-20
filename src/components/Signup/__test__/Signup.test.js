@@ -2,29 +2,34 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 // Local import
-import Signin from 'src/components/Signin';
+import Signup from 'src/components/Signup';
 import Email from 'src/containers/Inputs/Email';
 import Password from 'src/containers/Inputs/Password';
+import ConfirmPassword from 'src/containers/Inputs/ConfirmPassword';
 import ErrorForm from 'src/components/ErrorForm';
 import Loader from 'src/components/Loader';
 
-describe('Signin', () => {
+describe('Signup', () => {
   let wrapper;
   const props = {
     location: { pathname: '' },
     email: '',
     password: '',
-    submitSignin: jest.fn(),
+    confirmPassword: '',
+    submitSignup: jest.fn(),
     userMessage: [],
   };
   it('render without crashing', () => {
-    wrapper = shallow(<Signin {...props} />);
+    wrapper = shallow(<Signup {...props} />);
   });
   it('contain component Email', () => {
     expect(wrapper.exists(Email)).toBe(true);
   });
   it('contain component Password', () => {
     expect(wrapper.exists(Password)).toBe(true);
+  });
+  it('contain component ConfirmPassword', () => {
+    expect(wrapper.exists(ConfirmPassword)).toBe(true);
   });
   it('don\'t contain component ErrorForm when errorList.length = 0', () => {
     expect(wrapper.exists(ErrorForm)).toBe(false);
@@ -46,24 +51,26 @@ describe('Signin', () => {
     wrapper.update();
     expect(wrapper.state('loading')).toBe(false);
   });
-  it('submit signin fail validation data', () => {
+  it('submit signup fail validation data', () => {
     wrapper.setProps({
       email: 'test',
       password: 'test',
+      confirmPassword: 'confirm',
       userMessage: [],
     });
-    wrapper.find('.signin').simulate('submit', { preventDefault: () => {} });
-    expect(wrapper.state('errorList')).toHaveLength(2);
+    wrapper.find('.signup').simulate('submit', { preventDefault: () => {} });
+    expect(wrapper.state('errorList')).toHaveLength(3);
   });
-  it('submit signin sucess validation data', () => {
+  it('submit signup sucess validation data', () => {
     wrapper.setProps({
       email: 'test@test.test',
       password: 'test111',
+      confirmPassword: 'test111',
     });
     wrapper.setState({ errorList: [] });
-    wrapper.find('.signin').simulate('submit', { preventDefault: () => {} });
+    wrapper.find('.signup').simulate('submit', { preventDefault: () => {} });
     expect(wrapper.state('errorList')).toHaveLength(0);
     expect(wrapper.state('loading')).toBe(true);
-    expect(wrapper.instance().props.submitSignin).toHaveBeenCalled();
+    expect(wrapper.instance().props.submitSignup).toHaveBeenCalled();
   });
 });

@@ -1,5 +1,4 @@
 /* eslint-disable import/no-named-as-default */
-/* eslint-disable no-undef */
 // NPM import
 import React from 'react';
 import { shallow } from 'enzyme';

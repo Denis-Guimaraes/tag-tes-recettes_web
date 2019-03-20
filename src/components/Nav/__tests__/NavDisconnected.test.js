@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // NPM import
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -20,15 +19,13 @@ describe('NavDisconnected', () => {
     expect(wrapper.exists(LinkSignup)).toBe(true);
   });
   it('route /connexion contain component LinkHome & LinkSignup', () => {
-    props.location.pathname = '/connexion';
-    wrapper = shallow(<NavDisconnected {...props} />);
+    wrapper.setProps({ location: { pathname: '/connexion' } });
     expect(wrapper.exists(LinkHome)).toBe(true);
     expect(wrapper.exists(LinkSignin)).toBe(false);
     expect(wrapper.exists(LinkSignup)).toBe(true);
   });
   it('route /inscription contain component LinkHome & LinkSignin', () => {
-    props.location.pathname = '/inscription';
-    wrapper = shallow(<NavDisconnected {...props} />);
+    wrapper.setProps({ location: { pathname: '/inscription' } });
     expect(wrapper.exists(LinkHome)).toBe(true);
     expect(wrapper.exists(LinkSignin)).toBe(true);
     expect(wrapper.exists(LinkSignup)).toBe(false);

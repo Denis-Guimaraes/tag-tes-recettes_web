@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // NPM import
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -6,7 +5,7 @@ import { Link } from 'react-router-dom';
 // Local import
 import LinkHome from 'src/components/Nav/LinkHome';
 
-describe('NavConnected', () => {
+describe('LinkHome', () => {
   let wrapper;
   it('render without crashing', () => {
     wrapper = shallow(<LinkHome />);

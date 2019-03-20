@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // NPM import
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -6,7 +5,7 @@ import { Link } from 'react-router-dom';
 // Local import
 import { LinkAddRecipe } from 'src/components/Nav/LinkAddRecipe';
 
-describe('NavConnected', () => {
+describe('LinkAddRecipe', () => {
   let wrapper;
   const props = { location: { pathname: '/ajouter' } };
   it('render without crashing', () => {
@@ -19,8 +18,7 @@ describe('NavConnected', () => {
     expect(wrapper.find('.nav-item__icon').hasClass('nav-item__icon--current')).toBe(true);
   });
   it('other route component dont has class nav-item__icon--current', () => {
-    props.location.pathname = '/mes-livres';
-    wrapper = shallow(<LinkAddRecipe {...props} />);
+    wrapper.setProps({ location: { pathname: '/mes-livres' } });
     expect(wrapper.find('.nav-item__icon').hasClass('nav-item__icon--current')).toBe(false);
   });
 });

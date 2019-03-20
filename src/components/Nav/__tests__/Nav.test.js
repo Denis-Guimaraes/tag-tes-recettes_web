@@ -1,5 +1,4 @@
 /* eslint-disable import/no-named-as-default */
-/* eslint-disable no-undef */
 // NPM import
 import React from 'react';
 import { shallow } from 'enzyme';
@@ -10,7 +9,7 @@ import NavConnected from 'src/components/Nav/NavConnected';
 
 describe('Nav', () => {
   let wrapper;
-  let props = { userToken: '' };
+  const props = { userToken: '' };
   it('render without crashing', () => {
     wrapper = shallow(<Nav {...props} />);
   });
@@ -19,8 +18,7 @@ describe('Nav', () => {
     expect(wrapper.exists(NavDisconnected)).toBe(true);
   });
   it('contain component NavConnected', () => {
-    props = { userToken: '111' };
-    wrapper = shallow(<Nav {...props} />);
+    wrapper.setProps({ userToken: 'token' });
     expect(wrapper.exists(NavConnected)).toBe(true);
     expect(wrapper.exists(NavDisconnected)).toBe(false);
   });
