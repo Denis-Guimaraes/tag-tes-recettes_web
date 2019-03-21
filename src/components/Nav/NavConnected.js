@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 // NPM import
 import React from 'react';
 
@@ -11,7 +12,7 @@ import LinkSearchRecipes from './LinkSearchRecipes';
 import './nav.scss';
 
 // Code
-const NavConnected = () => (
+export const NavConnected = () => (
   <ul className="nav-list">
     <LinkMyBooks />
     <LinkMyFavorites />

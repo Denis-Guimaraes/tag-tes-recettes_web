@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:jest/recommended"],
   "parser": "babel-eslint",
   "env": {
     "browser": true
@@ -25,7 +25,14 @@
       "labelComponents": ["label"],
       "labelAttributes": ["htmlFor"],
       "controlComponents": ["input"]
-    }]
+    }],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/no-empty-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "jest/globals": true
   },
   "settings": {
     "import/resolver": "webpack"

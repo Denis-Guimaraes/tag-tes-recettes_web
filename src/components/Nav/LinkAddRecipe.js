@@ -11,7 +11,7 @@ import { FaFileSignature } from 'react-icons/fa';
 import './nav.scss';
 
 // Code
-const LinkAddRecipe = ({ location }) => {
+export const LinkAddRecipe = ({ location }) => {
   const iconClass = classNames('nav-item__icon', { 'nav-item__icon--current': location.pathname === '/ajouter' });
   return (
     <li>

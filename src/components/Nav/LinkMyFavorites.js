@@ -11,8 +11,8 @@ import { FaFileAlt } from 'react-icons/fa';
 import './nav.scss';
 
 // Code
-const LinkMyFavorites = ({ location }) => {
-  const iconClass = classNames('nav-item__icon', { 'nav-item__icon--current': location.pathname === '/mes-recettes' });
+export const LinkMyFavorites = ({ location }) => {
+  const iconClass = classNames('nav-item__icon', { 'nav-item__icon--current': location.pathname === '/mes-favorites' });
   return (
     <li>
       <Link to="/mes-favorites" className="nav-item">

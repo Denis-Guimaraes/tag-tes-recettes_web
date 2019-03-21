@@ -12,7 +12,7 @@ import LinkHome from './LinkHome';
 import './nav.scss';
 
 // Code
-const NavDisconnected = ({ location }) => (
+export const NavDisconnected = ({ location }) => (
   <ul className="nav-list">
     {location.pathname !== '/connexion' && <LinkSignin />}
     {location.pathname !== '/' && <LinkHome />}
