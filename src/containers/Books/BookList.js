@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import BookList from 'src/components/Books/BookList';
 
 // Code
+// Filter books by type
+export const filterBooks = books => books.filter(book => book.type.id === 1);
+
 const mapStateToProps = state => ({
-  books: state.book.books.filter(book => book.type.id === 1),
+  books: filterBooks(state.book.books),
 });
 
 const mapDispatchToProps = () => ({});
