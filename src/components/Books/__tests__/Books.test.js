@@ -14,7 +14,7 @@ describe('Books', () => {
   it('render without crashing', () => {
     wrapper = shallow(<Books {...props} />);
   });
-  it('getAllBooks have been called one time', () => {
+  it('getAllBooks have been called', () => {
     expect(props.getAllBooks).toHaveBeenCalledTimes(1);
   });
   it('contain component BookList', () => {
