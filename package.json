@@ -65,7 +65,7 @@
     "build:prod": "NODE_ENV=production webpack --mode production",
     "build:prod:win": "set NODE_ENV=production && webpack --mode production",
     "save-deps": "rm -rf node_modules && npm update --save && npm update --save-dev",
-    "test": "jest --collectCoverage=true"
+    "test": "jest --collectCoverage=true --runInBand"
   },
   "jestWebpackResolver": {
     "webpackConfig": "webpack.config.js"
