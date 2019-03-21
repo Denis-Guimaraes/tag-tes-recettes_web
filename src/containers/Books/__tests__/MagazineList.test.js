@@ -1,7 +1,7 @@
 // Local import
 import { filterBooks } from 'src/containers/Books/MagazineList';
 
-describe('BookList containers', () => {
+describe('MagazineList containers', () => {
   it('return books filtered by type', () => {
     const books = [
       { name: 'name 1', type: 1 },
