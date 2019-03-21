@@ -9,7 +9,7 @@ import { getFavoritesRecipes } from 'src/store/middlewares/RecipeApiMiddleware';
 
 // Code
 // Return action according to path
-const getAction = (ownProps) => {
+export const getAction = (ownProps) => {
   if (ownProps.match.params.id) {
     return getRecipesFromBook(ownProps.match.params.id);
   }

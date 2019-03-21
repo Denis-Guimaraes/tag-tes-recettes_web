@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 import MagazineList from 'src/components/Books/MagazineList';
 
 // Code
+export const filterBooks = books => books.filter(book => book.type.id === 2);
+
 const mapStateToProps = state => ({
-  books: state.book.books.filter(book => book.type.id === 2),
+  books: filterBooks(state.book.books),
 });
 
 const mapDispatchToProps = () => ({});
