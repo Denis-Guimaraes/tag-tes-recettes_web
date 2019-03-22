@@ -16,5 +16,5 @@ jobs:
           path: coverage
       - run:
           name: Send coverage to codebeat
-          command: CODECLIMATE_API_HOST=$CODECLIMATE_API_HOST CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN ./node_modules/.bin/codeclimate-test-reporter < /home/circleci/TTR/coverage/lcov.info
+          command: CODECLIMATE_API_HOST=${CODECLIMATE_API_HOST} CODECLIMATE_REPO_TOKEN=${CODECLIMATE_REPO_TOKEN} ./node_modules/.bin/codeclimate-test-reporter < /home/circleci/TTR/coverage/lcov.info
 

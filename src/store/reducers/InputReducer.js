@@ -7,8 +7,8 @@ const initialState = {
 };
 
 // Action type
-const ON_CHANGE = 'ON_CHANGE';
-const RESET_INPUT = 'RESET_INPUT';
+export const ON_CHANGE = 'ON_CHANGE';
+export const RESET_INPUT = 'RESET_INPUT';
 
 // Reducer
 const InputReducer = (state = initialState, action = {}) => {
