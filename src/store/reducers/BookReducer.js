@@ -4,7 +4,7 @@ const initialState = {
 };
 
 // Action type
-const STORE_BOOKS = 'STORE_BOOKS';
+export const STORE_BOOKS = 'STORE_BOOKS';
 
 // Reducer
 const BookReducer = (state = initialState, action = {}) => {
