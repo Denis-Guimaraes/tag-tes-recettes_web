@@ -6,7 +6,7 @@ import InputReducer, {
   resetInput,
 } from 'src/store/reducers/InputReducer';
 
-describe('BookReducer', () => {
+describe('InputReducer', () => {
   const initialState = {
     username: '',
     email: '',

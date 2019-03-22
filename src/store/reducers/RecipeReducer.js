@@ -4,7 +4,7 @@ const initialState = {
 };
 
 // Action type
-const STORE_RECIPES = 'STORE_RECIPES';
+export const STORE_RECIPES = 'STORE_RECIPES';
 
 // Reducer
 const RecipeReducer = (state = initialState, action = {}) => {
